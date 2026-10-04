@@ -1,0 +1,17 @@
+name: 03 - Workflow Runners
+on: workflow_dispatch
+jobs:
+    ubuntu-echo:
+     runs-on: ubuntu-latest
+     steps:
+        - name: Show OS
+          run: |
+           echo "This job is running on an ubuntu-latest runner."
+           echo "Runner OS: $RUNNER_OS"
+         
+
+    windows-echo:
+        runs-on:     windows-latest
+        steps:
+            - name: Show OS
+              run:   echo "This job is running on an ${{runner.os}} runner."
